@@ -8,13 +8,22 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'navbar.js',
+    filename: 'Navbar.js',
     libraryTarget: 'umd',
-    library: 'navbar'
+    library: 'Navbar'
   },
   plugins: [
-    new webpack.IgnorePlugin(/underscore/),
-    new webpack.IgnorePlugin(/react-scroll/)
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false
+      }
+    })
   ],
   module: {
     loaders: [{

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import _ from 'underscore';
 import {Link} from 'react-scroll';
 
 require('./styles/navbar.scss');
@@ -10,11 +9,12 @@ export default class Navbar extends Component {
     this.getMenus = this.getMenus.bind(this);
   }
   getTitle() {
-    return this.props.title ||
-      this.props.url.match(/https?:\/\/github.com\/[-_a-zA-Z0-9]+\/([-_a-zA-Z0-9]+)/)[1];
+    if (this.props.title) return this.props.title;
+    if (!this.props.url) throw new Error('Atleast pass title or url');
+    return this.props.url.match(/https?:\/\/github.com\/[-_a-zA-Z0-9]+\/([-_a-zA-Z0-9]+)/)[1];
   }
   getMenus() {
-    if (_.isEmpty(this.props.menus))
+    if (!this.props.menus)
       return;
 
     var items = JSON.parse(this.props.menus).map( (item, index) => {

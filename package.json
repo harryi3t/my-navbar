@@ -1,0 +1,42 @@
+{
+  "name": "my-navbar",
+  "version": "0.1.0",
+  "description": "",
+  "main": "Navbar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harryi3t/my-navbar.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Harendra Singh <66hari@gmail.com> (http://github.com/harryi3t)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harryi3t/my-navbar/issues"
+  },
+  "homepage": "https://github.com/harryi3t/my-navbar#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "webpack": "^1.13.3"
+  },
+  "dependencies": {
+    "css": "^2.2.1",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-scroll": "^1.4.4",
+    "sass": "^0.5.0",
+    "style": "^0.0.3",
+    "underscore": "^1.8.3"
+  }
+}

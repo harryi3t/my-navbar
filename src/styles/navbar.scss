@@ -1,0 +1,116 @@
+@import 'mixins';
+
+//colors
+$bg_color: #2c3e50;
+$white: #fff;
+$primary_color: #18bc9c;
+
+//fonts
+$font_0: Montserrat;
+$font_1: Helvetica Neue;
+$font_2: Helvetica;
+$font_3: Arial;
+$font_4: sans-serif;
+
+%narbar_active {
+	background-color: $primary_color;
+	color: $white;
+	border-color: $primary_color;
+}
+
+.clickable{
+  color: $white;
+  cursor: pointer;
+}
+
+.clickable:hover{
+  color: $primary_color !important;
+}
+
+.navbar-custom {
+	background: $bg_color;
+	font-family: $font_0, $font_1, $font_2, $font_3, $font_4;
+	text-transform: uppercase;
+	font-weight: 700;
+	border: none;
+  a:focus {
+		outline: none;
+	}
+  @include for-tablet-portrait-up {
+    padding: 25px 0;
+		transition: padding 0.3s;
+    &.affix {
+      padding: 10px 0;
+      .navbar-brand {
+        font-size: 1.5em;
+      }
+    }
+  }
+  .Aligner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar-header {
+    a {
+      float: left;
+      margin: 0 1px;
+      @include for-desktop-up {
+        margin: 0 5px;
+      }
+      &.icon {
+        @include for-phone-only {
+          display: none;
+        }
+      }
+    }
+  }
+	.navbar-brand {
+		color: $white;
+    @include for-tablet-portrait-up {
+      font-size: 2em;
+      transition: all 0.3s;
+    }
+		&:hover {
+			color: $white;
+		}
+		&:focus {
+			color: $white;
+		}
+		&:active {
+			color: $white;
+		}
+		&.active {
+			color: $white;
+		}
+	}
+	.navbar-nav {
+		letter-spacing: 1px;
+		li {
+			a {
+				color: $white;
+        cursor: pointer;
+				&:hover, &.active {
+					color: $primary_color;
+					outline: none;
+				}
+			}
+		}
+	}
+	.navbar-toggle {
+		color: $white;
+		text-transform: uppercase;
+		font-size: 10px;
+		border-color: $white;
+		&:hover {
+			@extend %narbar_active;
+		}
+		&:focus {
+			@extend %narbar_active;
+		}
+	}
+  .navbar-title {
+    color: $white;
+    margin-top: -10px;
+  }
+}

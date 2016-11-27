@@ -13,7 +13,6 @@ module.exports = {
     library: 'navbar'
   },
   plugins: [
-    new webpack.IgnorePlugin(/react/),
     new webpack.IgnorePlugin(/underscore/),
     new webpack.IgnorePlugin(/react-scroll/)
   ],

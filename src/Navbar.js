@@ -90,3 +90,8 @@ export default class Navbar extends Component {
     );
   }
 }
+
+Navbar.propTypes = {
+  title: React.PropTypes.string,
+  url: React.PropTypes.string.isRequired
+};
